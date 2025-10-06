@@ -8,16 +8,16 @@
 </head>
 <body>
   <!-- Back to Portfolio Button (Top) -->
-  <div class="back-button">
+  <div class="back-button fade-in">
     <a href="https://aiyer04.github.io/portfolio/" target="_blank">← Back to Portfolio</a>
   </div>
 
-  <header>
+  <header class="fade-in">
     <h1>Discount Compiler – Chrome Extension for Automatic Discounts</h1>
     <p>A portfolio case study demonstrating product management skills, from user research to MVP and A/B testing.</p>
   </header>
 
-  <section id="problem">
+  <section id="problem" class="fade-in">
     <h2>Problem Statement</h2>
     <p>Frequent online shoppers, particularly college students, often miss savings because discounts are scattered across sites or hidden behind logins. Student discounts require extra verification via Student Beans or Unidays, causing friction and lost savings.</p>
     <ul>
@@ -27,7 +27,7 @@
     </ul>
   </section>
 
-  <section id="user-research">
+  <section id="user-research" class="fade-in">
     <h2>User Research & Insights</h2>
     <p><strong>Hypothesis:</strong> Students are willing to verify once, but don’t want to leave checkout repeatedly.</p>
     <ul>
@@ -36,7 +36,7 @@
     </ul>
   </section>
 
-  <section id="market-analysis">
+  <section id="market-analysis" class="fade-in">
     <h2>Market & Competitive Analysis</h2>
     <table>
       <tr>
@@ -72,7 +72,7 @@
     </table>
   </section>
 
-  <section id="solution">
+  <section id="solution" class="fade-in">
     <h2>Solution Concept</h2>
     <p><strong>Product Vision:</strong> Save students time and money by automatically applying the best discounts at checkout.</p>
     <h3>MVP Features:</h3>
@@ -89,19 +89,34 @@
     </ul>
   </section>
 
-  <section id="demo">
-    <h2>Demo Screenshots</h2>
-    <div class="screenshots">
-      <img src="images/screenshot1.png" alt="Extension popup with verification">
-      <img src="images/screenshot2.png" alt="Savings preview">
-      <img src="images/screenshot3.png" alt="Savings applied - control">
-      <img src="images/screenshot4.png" alt="Savings applied - variant A">
-      <img src="images/screenshot5.png" alt="Savings applied - variant B">
-      <img src="images/screenshot6.png" alt="Chrome extension prototype">
+  <section class="image-section fade-in">
+    <div class="image-item">
+      <img src="images/screenshot6.png" alt="Discount Compiler interface">
+      <p class="image-caption">The extension detects discounts across multiple e-commerce sites in real time.</p>
+    </div>
+    <div class="image-item">
+      <img src="images/screenshot1.png" alt="Student Beans integration example">
+      <p class="image-caption">Integration with Student Beans and similar services allows student-specific discounts to be applied automatically.</p>
+    </div>
+    <div class="image-item">
+      <img src="images/screenshot3.png" alt="Checkout optimization result - Control Variant">
+      <p class="image-caption">A streamlined checkout showing total savings and applied coupon details (Control Variant).</p>
+    </div>
+    <div class="image-item">
+      <img src="images/screenshot4.png" alt="Checkout optimization result - Variant A">
+      <p class="image-caption">A streamlined checkout showing total savings and applied coupon details (Variant A).</p>
+    </div>
+    <div class="image-item">
+      <img src="images/screenshot5.png" alt="Checkout optimization result - Variant B">
+      <p class="image-caption">A streamlined checkout showing total savings and applied coupon details (Variant B).</p>
+    </div>
+    <div class="image-item">
+      <img src="images/screenshot2.png" alt="Discount Compiler Savings Summary">
+      <p class="image-caption">A dashboard displaying total savings and usage statistics.</p>
     </div>
   </section>
 
-  <section id="ab-testing">
+  <section id="ab-testing" class="fade-in">
     <h2>A/B Testing & Experimentation</h2>
     <p><strong>Hypothesis:</strong> Showing savings information increases discount application.</p>
     <ul>
@@ -112,7 +127,7 @@
     <p><strong>Metrics:</strong> % of users clicking “Apply All”, average savings per user, retention</p>
   </section>
 
-  <section id="metrics">
+  <section id="metrics" class="fade-in">
     <h2>Success Metrics</h2>
     <ul>
       <li>Activation: % applying a discount on first use</li>
@@ -122,7 +137,7 @@
     </ul>
   </section>
 
-  <section id="reflection">
+  <section id="reflection" class="fade-in">
     <h2>Reflection</h2>
     <p>This case study demonstrates:</p>
     <ul>
@@ -135,12 +150,28 @@
   </section>
 
   <!-- Back to Portfolio Button (Bottom) -->
-  <div class="back-button">
+  <div class="back-button fade-in">
     <a href="https://aiyer04.github.io/portfolio/" target="_blank">← Back to Portfolio</a>
   </div>
 
-  <footer>
+  <footer class="fade-in">
     <p>Portfolio case study by Anjali Iyer</p>
   </footer>
+
+  <!-- Fade-in Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
