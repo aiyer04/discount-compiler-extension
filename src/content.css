@@ -1,0 +1,26 @@
+/* Content script styles */
+.discount-compiler-highlight {
+  border: 2px solid #9b87f5 !important;
+  box-shadow: 0 0 10px rgba(155, 135, 245, 0.3) !important;
+}
+
+.discount-compiler-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #9b87f5, #7e69ab);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(155, 135, 245, 0.4);
+  z-index: 999999;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.discount-compiler-badge:hover {
+  transform: scale(1.05);
+}
