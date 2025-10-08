@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Scroll Progress Bar -->
-  <div id="progress-bar"></div>
-
   <!-- Back to Portfolio Button (Top) -->
   <div class="back-button fade-in">
     <a href="https://aiyer04.github.io/portfolio/" target="_blank">← Back to Portfolio</a>
@@ -176,15 +173,5 @@
       elements.forEach(el => observer.observe(el));
     });
   </script>
-
-  <script>
-  // Scroll Progress Bar Logic
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    document.getElementById('progress-bar').style.width = scrollPercent + '%';
-  });
-</script>
 </body>
 </html>
